@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Hub - Browse & Compare Cars</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+header {
+  background-color: #00796b;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Vehicle Listings Section */
+.search-container {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 500px;
+}
+
+#searchBox {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.vehicle-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.vehicle-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.vehicle-card img {
+  max-width: 100%;
+  border-radius: 5px;
+  height: 180px;
+}
+
+button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+  </style>
+</head>
+<body>
+    
+      <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <h1>Vehicle Hub</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#vehicles">Browse Cars</a></li>
+        <li><a href="#compare">Car Comparison</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Vehicle Listings Section -->
+  <section id="vehicles">
+    <h2>Browse Cars</h2>
+    
+    <!-- Search Box -->
+    <div class="search-container">
+      <input type="text" id="searchBox" placeholder="Search for cars..." oninput="searchCars()">
+    </div>
+
+    <div class="vehicle-list" id="vehicle-list">
+      <div class="vehicle-card" data-name="Toyota Corolla">
+        <img src="car1.jpg" alt="Toyota Corolla">
+        <h3>Toyota Corolla</h3>
+        <p>$20,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Honda Civic">
+        <img src="car2.jpg" alt="Honda Civic">
+        <h3>Honda Civic</h3>
+        <p>$22,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="BMW 320i">
+        <img src="car3.jpg" alt="BMW 320i">
+        <h3>BMW 320i</h3>
+        <p>$35,000</p>
+        <button>View Details</button>
+      </div>
+      <!-- Additional Cars -->
+      <div class="vehicle-card" data-name="Ford Mustang">
+        <img src="car4.jpg" alt="Ford Mustang">
+        <h3>Ford Mustang</h3>
+        <p>$45,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Chevrolet Malibu">
+        <img src="car5.jpg" alt="Chevrolet Malibu">
+        <h3>Chevrolet Malibu</h3>
+        <p>$24,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Nissan Altima">
+        <img src="car6.jpg" alt="Nissan Altima">
+        <h3>Nissan Altima</h3>
+        <p>$23,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Audi A4">
+        <img src="car7.jpg" alt="Audi A4">
+        <h3>Audi A4</h3>
+        <p>$40,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Mercedes-Benz C-Class">
+        <img src="car8.jpg" alt="Mercedes-Benz C-Class">
+        <h3>Mercedes-Benz C-Class</h3>
+        <p>$42,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Hyundai Elantra">
+        <img src="car9.jpg" alt="Hyundai Elantra">
+        <h3>Hyundai Elantra</h3>
+        <p>$20,500</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Tesla Model 3">
+        <img src="car10.jpg" alt="Tesla Model 3">
+        <h3>Tesla Model 3</h3>
+        <p>$55,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Mazda CX-5">
+        <img src="car11.jpg" alt="Mazda CX-5">
+        <h3>Mazda CX-5</h3>
+        <p>$30,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Kia Sportage">
+        <img src="car12.jpg" alt="Kia Sportage">
+        <h3>Kia Sportage</h3>
+        <p>$28,000</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Volkswagen Golf">
+        <img src="car13.jpg" alt="Volkswagen Golf">
+        <h3>Volkswagen Golf</h3>
+        <p>$23,500</p>
+        <button>View Details</button>
+      </div>
+      <div class="vehicle-card" data-name="Subaru Outback">
+        <img src="car14.jpg" alt="Subaru Outback">
+        <h3>Subaru Outback</h3>
+        <p>$35,500</p>
+        <button>View Details</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Car Comparison Section -->
+  <section id="compare">
+    <h2>Car Comparison</h2>
+    <div class="compare-cars">
+      <label for="car1">Car 1:</label>
+      <select id="car1">
+        <option value="toyota">Toyota Corolla</option>
+        <option value="honda">Honda Civic</option>
+        <option value="bmw">BMW 320i</option>
+        <option value="ford">Ford Mustang</option>
+        <option value="chevrolet">Chevrolet Malibu</option>
+        <option value="nissan">Nissan Altima</option>
+        <option value="audi">Audi A4</option>
+        <option value="mercedes">Mercedes-Benz C-Class</option>
+        <option value="hyundai">Hyundai Elantra</option>
+        <option value="tesla">Tesla Model 3</option>
+      </select>
+
+      <label for="car2">Car 2:</label>
+      <select id="car2">
+        <option value="toyota">Toyota Corolla</option>
+        <option value="honda">Honda Civic</option>
+        <option value="bmw">BMW 320i</option>
+        <option value="ford">Ford Mustang</option>
+        <option value="chevrolet">Chevrolet Malibu</option>
+        <option value="nissan">Nissan Altima</option>
+        <option value="audi">Audi A4</option>
+        <option value="mercedes">Mercedes-Benz C-Class</option>
+        <option value="hyundai">Hyundai Elantra</option>
+        <option value="tesla">Tesla Model 3</option>
+      </select>
+
+      <button onclick="compareCars()">Compare</button>
+      <div id="comparison-result"></div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Your email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" placeholder="Your message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy
+  <script src="scripts.js"></script>
+  <script>
+    // Function to compare cars
+function compareCars() {
+  var car1 = document.getElementById("car1").value;
+  var car2 = document.getElementById("car2").value;
+
+  var result = document.getElementById("comparison-result");
+
+  if (car1 === car2) {
+    result.innerHTML = "You cannot compare the same car. Please select two different cars.";
+    result.style.color = "red";
+  } else {
+    result.innerHTML = "Comparing: " + car1 + " and " + car2;
+    result.style.color = "green";
+  }
+}
+
+// Example code for form submission
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  alert("Thank you for contacting us! We'll get back to you shortly.");
+});
+// Search Functionality
+function searchCars() {
+  let searchQuery = document.getElementById("searchBox").value.toLowerCase();
+  let vehicles = document.getElementsByClassName("vehicle-card");
+
+  for (let i = 0; i < vehicles.length; i++) {
+    let vehicleName = vehicles[i].getAttribute("data-name").toLowerCase();
+
+    if (vehicleName.indexOf(searchQuery) > -1) {
+      vehicles[i].style.display = "";
+    } else {
+      vehicles[i].style.display = "none";
+    }
+  }
+}
+
+  </script>
+</body>
+</html>
